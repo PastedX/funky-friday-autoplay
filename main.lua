@@ -288,7 +288,7 @@ local chanceValues do
             if (arrow.Side == framework.UI.CurrentSide) and (not arrow.Marked) and currentlyPlaying.TimePosition > 0 then
                 local position = (arrow.Data.Position % count) .. '' 
 
-                local hitboxOffset = 20 
+                local hitboxOffset = 0 
                 do
                     local settings = framework.Settings;
                     local offset = type(settings) == 'table' and settings.HitboxOffset;
