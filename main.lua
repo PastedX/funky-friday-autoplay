@@ -298,7 +298,7 @@ local chanceValues do
                         hitboxOffset = value;
                     end
 
-                    hitboxOffset = hitboxOffset / 1000
+                    hitboxOffset = hitboxOffset / 1300
                 end
 
                 local songTime = framework.SongPlayer.CurrentTime 
