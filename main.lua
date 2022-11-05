@@ -288,7 +288,7 @@ local chanceValues do
             if (arrow.Side == framework.UI.CurrentSide) and (not arrow.Marked) and currentlyPlaying.TimePosition > 0 then
                 local position = (arrow.Data.Position % count) .. '' 
 
-                local hitboxOffset = 0 
+                local hitboxOffset = 20 
                 do
                     local settings = framework.Settings;
                     local offset = type(settings) == 'table' and settings.HitboxOffset;
@@ -298,7 +298,7 @@ local chanceValues do
                         hitboxOffset = value;
                     end
 
-                    hitboxOffset = hitboxOffset / 1300
+                    hitboxOffset = hitboxOffset / 700
                 end
 
                 local songTime = framework.SongPlayer.CurrentTime 
@@ -313,7 +313,7 @@ local chanceValues do
                     songTime = songTime /  playbackSpeed
                 end
 
-                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 130, 0, 130)
+                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 70, 0, 70)
 
                 local result = rollChance()
                 arrow._hitChance = arrow._hitChance or result;
@@ -336,7 +336,7 @@ local chanceValues do
                         local noteDelay = isHeld and Options.HeldDelay or Options.ReleaseDelay
 
                         local delay = delayMode == 'Random' and rng:NextNumber(minDelay.Value, maxDelay.Value) or noteDelay.Value
-                        task.wait(arrowLength + (delay / 1300))
+                        task.wait(arrowLength + (delay / 700))
 
                         pressKey(keyCode, false)
                         arrow.Marked = nil;
