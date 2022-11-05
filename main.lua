@@ -313,7 +313,7 @@ local chanceValues do
                     songTime = songTime /  playbackSpeed
                 end
 
-                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 100, 0, 100)
+                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 300, 0, 300)
 
                 local result = rollChance()
                 arrow._hitChance = arrow._hitChance or result;
