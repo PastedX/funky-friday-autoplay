@@ -298,7 +298,7 @@ local chanceValues do
                         hitboxOffset = value;
                     end
 
-                    hitboxOffset = hitboxOffset / 700
+                    hitboxOffset = hitboxOffset / 1000
                 end
 
                 local songTime = framework.SongPlayer.CurrentTime 
@@ -313,7 +313,7 @@ local chanceValues do
                     songTime = songTime /  playbackSpeed
                 end
 
-                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 70, 0, 70)
+                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 1000, 0, 1000)
 
                 local result = rollChance()
                 arrow._hitChance = arrow._hitChance or result;
@@ -336,7 +336,7 @@ local chanceValues do
                         local noteDelay = isHeld and Options.HeldDelay or Options.ReleaseDelay
 
                         local delay = delayMode == 'Random' and rng:NextNumber(minDelay.Value, maxDelay.Value) or noteDelay.Value
-                        task.wait(arrowLength + (delay / 700))
+                        task.wait(arrowLength + (delay / 1000))
 
                         pressKey(keyCode, false)
                         arrow.Marked = nil;
@@ -782,3 +782,5 @@ do
 end
 
 UI:Notify(string.format('Loaded script in %.4f second(s)!', tick() - start), 3)
+UI:Notify(string.format('Your gay :) GAY GAY GAY', tick() - start), 1)
+
