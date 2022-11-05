@@ -313,7 +313,7 @@ local chanceValues do
                     songTime = songTime /  playbackSpeed
                 end
 
-                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 10, 0, 10)
+                local noteTime = math.clamp((1 - math.abs(arrow.Data.Time - (songTime + hitboxOffset))) * 100, 0, 100)
 
                 local result = rollChance()
                 arrow._hitChance = arrow._hitChance or result;
@@ -782,5 +782,5 @@ do
 end
 
 UI:Notify(string.format('Loaded script in %.4f second(s)!', tick() - start), 3)
-UI:Notify(string.format('Your gay :) GAY GAY GAY', tick() - start), 1)
+UI:Notify(string.format('Your gay :) GAY GAY GAY', tick() - start), 10)
 
